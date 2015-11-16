@@ -10,10 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var todo_1 = require('./todo');
-var todoFormComponent_1 = require('./todoFormComponent');
-var todolist_1 = require('./todolist');
-var todoService_1 = require('./todoService');
+var todo_1 = require('./todo/todo');
+var todoForm_1 = require('./todoForm/todoForm');
+var todolist_1 = require('./todolist/todolist');
+var todoService_1 = require('./todoService/todoService');
 var AppComponent = (function () {
     function AppComponent(todoService) {
         this.todoService = todoService;
@@ -35,7 +35,7 @@ var AppComponent = (function () {
         angular2_1.Component({
             selector: 'my-app',
             template: "\n\t\t<h1 class=\"text-center\">Angular 2 Todo App</h1>\n\t\t<div class=\"col-md-10 col-md-offset-1 hide\" [class.hide]=\"editing\">\n\t\t\t<todo-list [todoService]=\"todoService\" (edit)=\"onEdit($event)\"></todo-list>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<todo-form [todoService]=\"todoService\" [model]=\"todo\" [index]=\"index\" (save)=\"onSave()\"></todo-form>\n\t\t</div>\n\t",
-            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES, todoFormComponent_1.TodoFormComponent, todolist_1.TodolistComponent]
+            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES, todoForm_1.TodoForm, todolist_1.Todolist]
         }), 
         __metadata('design:paramtypes', [todoService_1.TodoService])
     ], AppComponent);

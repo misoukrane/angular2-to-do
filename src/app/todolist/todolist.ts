@@ -1,6 +1,6 @@
 import {Component, Input, CORE_DIRECTIVES, EventEmitter, FORM_DIRECTIVES, Output} from 'angular2/angular2'
-import {Todo, TodoComponent} from './todo'
-import {TodoService} from './todoService'
+import {Todo, TodoComponent} from '../todo/todo'
+import {TodoService} from '../todoService/todoService'
 
 @Component({
 	selector: 'todo-list',
@@ -11,7 +11,7 @@ import {TodoService} from './todoService'
 	`,
 	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, TodoComponent]
 })
-export class TodolistComponent {
+export class Todolist {
 	@Input() todoService: TodoService;
 	@Output() edit = new EventEmitter();
 	public todos: Todo[];

@@ -10,15 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var todo_1 = require('./todo');
-var todoService_1 = require('./todoService');
-var TodolistComponent = (function () {
-    function TodolistComponent(todoService) {
+var todo_1 = require('../todo/todo');
+var todoService_1 = require('../todoService/todoService');
+var Todolist = (function () {
+    function Todolist(todoService) {
         this.edit = new angular2_1.EventEmitter();
         this.todoService = todoService;
         this.todos = this.todoService.getTodos();
     }
-    TodolistComponent.prototype.onChange = function (event) {
+    Todolist.prototype.onChange = function (event) {
         switch (event.type) {
             case 'delete':
                 this.todoService.deleteTodo(event.todo, event.index);
@@ -35,20 +35,20 @@ var TodolistComponent = (function () {
     __decorate([
         angular2_1.Input(), 
         __metadata('design:type', todoService_1.TodoService)
-    ], TodolistComponent.prototype, "todoService");
+    ], Todolist.prototype, "todoService");
     __decorate([
         angular2_1.Output(), 
         __metadata('design:type', Object)
-    ], TodolistComponent.prototype, "edit");
-    TodolistComponent = __decorate([
+    ], Todolist.prototype, "edit");
+    Todolist = __decorate([
         angular2_1.Component({
             selector: 'todo-list',
             template: "\n\t\t<div class=\"row\">\n\t\t\t<to-do  *ng-for=\"#todo of todos; var index=index\" [todo]=\"todo\" [index]=\"index\" (change)=\"onChange($event)\"></to-do>\n\t\t</div>\n\t",
             directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES, todo_1.TodoComponent]
         }), 
         __metadata('design:paramtypes', [todoService_1.TodoService])
-    ], TodolistComponent);
-    return TodolistComponent;
+    ], Todolist);
+    return Todolist;
 })();
-exports.TodolistComponent = TodolistComponent;
+exports.Todolist = Todolist;
 //# sourceMappingURL=todolist.js.map

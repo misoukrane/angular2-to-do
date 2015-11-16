@@ -1,8 +1,8 @@
 import { Component, bootstrap, Input, CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/angular2';
-import { Todo } from './todo';
-import { TodoFormComponent } from './todoFormComponent';
-import { TodolistComponent } from './todolist';
-import { TodoService } from './todoService'
+import { Todo } from './todo/todo';
+import { TodoForm } from './todoForm/todoForm';
+import { Todolist } from './todolist/todolist';
+import { TodoService } from './todoService/todoService'
 
 @Component({
 	selector: 'my-app',
@@ -15,7 +15,7 @@ import { TodoService } from './todoService'
 			<todo-form [todoService]="todoService" [model]="todo" [index]="index" (save)="onSave()"></todo-form>
 		</div>
 	`,
-	directives:[CORE_DIRECTIVES, FORM_DIRECTIVES, TodoFormComponent, TodolistComponent]
+	directives:[CORE_DIRECTIVES, FORM_DIRECTIVES, TodoForm, Todolist]
 })
 class AppComponent {
 	public todoService: TodoService;

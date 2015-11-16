@@ -1,13 +1,13 @@
 import {Component, CORE_DIRECTIVES, EventEmitter, FORM_DIRECTIVES, Input, Output} from 'angular2/angular2';
-import { Todo } from './todo';
-import { TodoService } from './todoService';
+import { Todo } from '../todo/todo';
+import { TodoService } from '../todoService/todoService';
 
 @Component({
   selector: 'todo-form',
-  templateUrl: 'app/todoFormComponent.html',
+  templateUrl: 'app/todoForm/todoForm.html',
   directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
-export class TodoFormComponent {
+export class TodoForm {
 	@Input() todoService: TodoService;
 	@Input() model:Todo;
 	@Input() index:number;
